@@ -1,0 +1,18 @@
+.landing-container {
+    position: relative;
+}
+.main-image {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    z-index: 0;
+    overflow-x: hidden;
+    display: flex;
+}
+
+.main-ttl-container {
+    position: absolute;
+    left: 30%;
+    top: 35%;
+}
+
