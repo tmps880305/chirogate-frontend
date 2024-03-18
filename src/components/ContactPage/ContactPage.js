@@ -1,13 +1,13 @@
 import React from 'react';
 
-import classes from './ProstagAPIPage.module.css'
+import classes from './ContactPage.module.css'
 
-const ProstagAPIPage = (props) => {
+const ContactPage = (props) => {
     return (
         <div className={classes.abt}>
-            <h1>ProstagAPIPage</h1>
+            <h1>ContactPage</h1>
         </div>
     )
 };
 
-export default ProstagAPIPage;
+export default ContactPage;

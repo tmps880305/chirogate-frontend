@@ -1,11 +1,12 @@
 import React from "react";
+import ProstagAPIPage from "../ProstagAPIPage/ProstagAPIPage";
 
 
-const PostagAPI = () => {
+const ProstagAPI = () => {
 
     return <>
-        <h1>Prostaglandins API’s</h1>
+        <ProstagAPIPage/>
     </>
 };
 
-export default PostagAPI;
+export default ProstagAPI;

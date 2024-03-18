@@ -1,18 +1,13 @@
 import React from 'react';
 
-import classes from './MainPage.module.css'
-import Landing from "./Landing";
-import MainIntro from "./MainIntro";
-import SubIntros from "./SubIntros";
+import classes from './AboutPage.module.css'
 
-const MainPage = (props) => {
+const AboutPage = (props) => {
     return (
-        <>
-            <Landing></Landing>
-            <MainIntro></MainIntro>
-            <SubIntros></SubIntros>
-        </>
+        <div className={classes.abt}>
+            <h1>About us</h1>
+        </div>
     )
 };
 
-export default MainPage;
+export default AboutPage;

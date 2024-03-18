@@ -1,13 +1,13 @@
 import React from 'react';
 
-import classes from './ProstagAPIPage.module.css'
+import classes from './ProstagCDMOPage.module.css'
 
-const ProstagAPIPage = (props) => {
+const ProstagCDMOPage = (props) => {
     return (
         <div className={classes.abt}>
-            <h1>ProstagAPIPage</h1>
+            <h1>ProstagCDMOPage</h1>
         </div>
     )
 };
 
-export default ProstagAPIPage;
+export default ProstagCDMOPage;

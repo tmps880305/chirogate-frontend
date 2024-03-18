@@ -1,11 +1,12 @@
 import React from "react";
+import ContactPage from "../ContactPage/ContactPage";
 
 
-const ProstagAPI = () => {
+const Contact = () => {
 
     return <>
-        <h1>Prostaglandins API’s</h1>
+        <ContactPage/>
     </>
 };
 
-export default ProstagAPI;
+export default Contact;

@@ -1,9 +1,9 @@
 import React from "react";
-import MainNavigation from "./MainNavigation";
+import Header from "../Layout/Header";
 
 const ErrorPage = () => {
     return <>
-        <MainNavigation/>
+        <Header/>
         <h1>Something wrong occurred.</h1>
     </>
 };

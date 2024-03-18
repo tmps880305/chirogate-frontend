@@ -1,9 +1,9 @@
 import React from 'react';
 import classes from "./Landing.module.css"
-import mainBackground from "../assets/mainpage_background.png";
+import mainBackground from "../../assets/mainpage_background.png";
 
 
-const Rentals = (props) => {
+const Landing = (props) => {
 
     return (
         <div className={classes["landing-container"]}>
@@ -17,4 +17,4 @@ const Rentals = (props) => {
     )
 };
 
-export default Rentals;
+export default Landing;

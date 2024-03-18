@@ -1,8 +1,8 @@
 import React from 'react';
 
-import classes from './ProstagAPIPage.module.css'
+import classes from './SpecialProstagPage.module.css'
 
-const ProstagAPIPage = (props) => {
+const SpecialProstagPage = (props) => {
     return (
         <div className={classes.abt}>
             <h1>ProstagAPIPage</h1>
@@ -10,4 +10,4 @@ const ProstagAPIPage = (props) => {
     )
 };
 
-export default ProstagAPIPage;
+export default SpecialProstagPage;

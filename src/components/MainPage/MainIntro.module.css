@@ -1,7 +1,42 @@
-.footer {
+.introContainer {
     width: 100%;
-    height: 160px;
-    margin: 0;
-    padding: 0;
-    background-color: #DBE7EC;
+    height: 860px;
+    background-color: var(--wh-prim);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.introCard {
+    width: 784px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 40px;
+}
+
+.introCard h3 {
+    color: var(--blu-prim);
+}
+
+.introCard h2 {
+    font-size: 2.8rem;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.introCard p {
+    width: 85%;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+.introCard button {
+    width: 35%;
+    aspect-ratio: 5/1;
+    color: var(--wh-prim);
+    font-size: 1.4rem;
+    background-color: var(--blu-prim);
+    border: none;
+    border-radius: 80px;
 }

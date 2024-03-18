@@ -1,13 +1,10 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import MainPage from "../MainPage/MainPage";
 
 function HomePage() {
-    return (<>
-        <h1>My Home Page</h1>
-        <p>Go to
-            <Link to="/products"> Products page</Link>.
-        </p>
-    </>);
+    return (
+        <MainPage/>
+    );
 }
 
 export default HomePage;

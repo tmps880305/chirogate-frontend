@@ -1,18 +1,40 @@
 import React from 'react';
 
-import classes from './MainIntro.module.css'
+import classes from './SubIntroCard.module.css'
+import subIntroImg from "../../assets/subintro_1.png";
 
-const Footer = (props) => {
+const SubIntroCard = (props) => {
+    let bkColor = '';
+    let isReverse = true;
+
+    switch (props.bkColor) {
+        case 'yellow':
+            isReverse = false;
+            bkColor = classes.bkYellow;
+            break;
+        case 'orange':
+            isReverse = false;
+            bkColor = classes.bkOrange;
+            break;
+        default:
+            break;
+    }
+
+    // const bkgyello = true;
+
     return (
-        <div className={classes.introContainer}>
-            <div className={classes.introCard}>
-                <h3>CHIROGATE</h3>
-                <h2>Pioneers Prostaglandin APIs synthesis with unique chemistry expertise</h2>
-                <p>Chirogate offers the market's purest Prostaglandin APIs, compliant with major Pharmacopoeias</p>
-                <button>show more</button>
+        <div className={`${classes.subIntroContainer}  ${bkColor}`}>
+            <div className={`${classes.subIntroCard} ${isReverse && classes.reverse} `}>
+                <div className={classes.subIntroCnt}>
+                    <h2>{props.title}</h2>
+                    <p>{props.content}</p>
+                </div>
+                <div className={classes.subIntroImg}>
+                    <img src={props.img} alt="Sub introduction image."/>
+                </div>
             </div>
         </div>
     )
 };
 
-export default Footer;
+export default SubIntroCard;

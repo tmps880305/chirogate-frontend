@@ -1,15 +1,18 @@
 import React from 'react';
 
-import classes from './MainIntro.module.css'
+import classes from './MainPage.module.css'
+import Landing from "./Landing";
+import MainIntro from "./MainIntro";
+import SubIntros from "./SubIntros";
 
-const Footer = (props) => {
+const MainPage = (props) => {
     return (
         <>
-            <div className={classes.introContainer}>
-
-            </div>
+            <Landing></Landing>
+            <MainIntro></MainIntro>
+            <SubIntros></SubIntros>
         </>
     )
 };
 
-export default Footer;
+export default MainPage;

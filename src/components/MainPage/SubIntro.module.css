@@ -1,42 +1,5 @@
-.introContainer {
-    width: 100%;
-    height: 860px;
-    background-color: var(--wh-prim);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.introCard {
-    width: 40%;
+.subIntroContainer {
     display: flex;
     flex-direction: column;
-    align-items: center;
-}
-
-.introCard h3 {
-    color: var(--blu-prim);
-    font-weight: normal;
-    font-size: 2rem;
-}
-
-.introCard h2 {
-    font-size: 2.8rem;
-    text-align: center;
-}
-
-.introCard p {
-    width: 85%;
-    font-size: 1.4rem;
-    text-align: center;
-}
-
-.introCard button {
-    width: 35%;
-    aspect-ratio: 5/1;
-    color: var(--wh-prim);
-    font-size: 1.4rem;
-    background-color: var(--blu-prim);
-    border: none;
-    border-radius: 80px;
+    justify-content: center;
 }

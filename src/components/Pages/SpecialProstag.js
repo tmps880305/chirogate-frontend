@@ -1,11 +1,12 @@
 import React from "react";
+import SpecialProstagPage from "../SpecialProstagPage/SpecialProstagPage";
 
 
-const PostagCDMO = () => {
+const SpecialProstag = () => {
 
     return <>
-        <h1>Prostaglandins API CDMO Services</h1>
+        <SpecialProstagPage/>
     </>
 };
 
-export default PostagCDMO;
+export default SpecialProstag;
