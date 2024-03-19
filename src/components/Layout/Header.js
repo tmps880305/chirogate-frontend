@@ -4,24 +4,17 @@ import logoImg from '../../assets/logo.png';
 import classes from './Header.module.css';
 import {NavLink} from "react-router-dom";
 import Button from "../UI/Button";
+import Hamburger from "../UI/Hamburger";
 
 const Header = (props) => {
     const [scrollState, setScrollState] = useState('top');
 
     useEffect(() => {
         const handleScroll = () => {
-            // const threshold = 200; // Define your threshold here
-            // const threshold_btm = 4000;
             const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-
-            // Set your desired percentage threshold here (e.g., 25%)
-
             const thresholdInPixels = 0.05 * scrollHeight;
             const thresholdInPixels_btm = 0.9 * scrollHeight;
-
             const currentScrollPos = window.pageYOffset;
-
-
 
             if (currentScrollPos > thresholdInPixels) {
                 if (currentScrollPos < thresholdInPixels_btm) {
@@ -32,8 +25,6 @@ const Header = (props) => {
             } else {
                 setScrollState('top');
             }
-
-            // setScrollState(currentScrollPos > threshold ? 'scrolled' : 'top');
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -68,6 +59,9 @@ const Header = (props) => {
                             </li>}
                     </ul>
                 </nav>
+                <div className={classes.burgerContainer}>
+                    <Hamburger scrollState={scrollState}/>
+                </div>
             </div>
         </header>
     )

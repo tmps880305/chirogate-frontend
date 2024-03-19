@@ -88,9 +88,22 @@
     padding: .7rem 1.2rem;
 }
 
+.burgerContainer {
+    margin: 0 20px;
+    height: 100%;
+    display: none;
+    justify-content: center;
+}
 
 @media only screen and (min-width: 1600px) {
     .navbar {
         width: 65%;
+    }
+}
+
+@media only screen and (max-width: 1366px) {
+    .burgerContainer {
+        display: flex;
+        align-items: center;
     }
 }
