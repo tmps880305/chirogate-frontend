@@ -35,8 +35,8 @@ const Header = (props) => {
     return (
         <header className={classes.header} data-scroll={scrollState}>
             <div className={classes.headerContainer}>
-                {scrollState === 'top' && <NavLink className={classes.logo}>
-                    <img src={logoImg} alt="Logo image."/>
+                {scrollState === 'top' && <NavLink className={classes.logo} to=''>
+                    <img src={logoImg} alt="Company name: Chirogate."/>
                 </NavLink>}
 
                 <nav className={classes.navbar}>

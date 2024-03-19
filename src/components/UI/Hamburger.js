@@ -5,13 +5,19 @@ import {NavLink} from "react-router-dom";
 
 const Hamburger = (props) => {
     const [isBurgerOpen, setIsBurgerOpen] = useState(false);
-    const scrollSate = props.scrollState;
+    const [scrollY, setScrollY] = useState(0);
 
     useEffect(() => {
-        if (isBurgerOpen) {
-            setIsBurgerOpen(!isBurgerOpen);
-        }
-    }, [scrollSate]);
+        const handleScroll = () => {
+            setScrollY(window.pageYOffset);
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    useEffect(() => {
+        setIsBurgerOpen(false);
+    }, [scrollY]);
 
     const onHamburgerClick = () => {
         setIsBurgerOpen(!isBurgerOpen);
