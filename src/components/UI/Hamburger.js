@@ -38,11 +38,9 @@ const Hamburger = (props) => {
                 <ul className={classes['menu-ul']}>
                     <li><NavLink className={classes.navlink} to=''>Home</NavLink></li>
                     <li><NavLink className={classes.navlink} to='about'>About</NavLink></li>
-                    <li><NavLink className={classes.navlink} to='prostagAPI'>Prostaglandins API’s</NavLink></li>
-                    <li><NavLink className={classes.navlink} to='prostagCDMO'>Prostaglandins API CDMO
-                        Services</NavLink></li>
-                    <li><NavLink className={classes.navlink} to='specialProstag'>Special Intermediates
-                        Prostaglandins analogs</NavLink></li>
+                    <li><NavLink className={classes.navlink} to='prostagAPI'>Prost API</NavLink></li>
+                    <li><NavLink className={classes.navlink} to='prostagCDMO'>CDMO Services</NavLink></li>
+                    <li><NavLink className={classes.navlink} to='specialProstag'>Special Analogs</NavLink></li>
                     <li><NavLink className={classes.navlink} to='specialProstag'>Contact</NavLink></li>
                 </ul>
             </div>
