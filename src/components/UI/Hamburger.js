@@ -23,6 +23,10 @@ const Hamburger = (props) => {
         setIsBurgerOpen(!isBurgerOpen);
     }
 
+    const onHamburgerNavClick = () => {
+        setIsBurgerOpen(false);
+    }
+
     return (
         <nav className={`${classes['hamburger-nav']} ${isBurgerOpen && classes.open}`}>
             <div className={classes['hamburger-wrap']} onClick={onHamburgerClick}>
@@ -36,12 +40,17 @@ const Hamburger = (props) => {
 
             <div className={classes.menu}>
                 <ul className={classes['menu-ul']}>
-                    <li><NavLink className={classes.navlink} to=''>Home</NavLink></li>
-                    <li><NavLink className={classes.navlink} to='about'>About</NavLink></li>
-                    <li><NavLink className={classes.navlink} to='prostagAPI'>Prost API</NavLink></li>
-                    <li><NavLink className={classes.navlink} to='prostagCDMO'>CDMO Services</NavLink></li>
-                    <li><NavLink className={classes.navlink} to='specialProstag'>Special Analogs</NavLink></li>
-                    <li><NavLink className={classes.navlink} to='specialProstag'>Contact</NavLink></li>
+                    <li><NavLink className={classes.navlink} to='' onClick={onHamburgerNavClick}>Home</NavLink></li>
+                    <li><NavLink className={classes.navlink} to='about' onClick={onHamburgerNavClick}>About</NavLink>
+                    </li>
+                    <li><NavLink className={classes.navlink} to='prostagAPI' onClick={onHamburgerNavClick}>Prost
+                        API</NavLink></li>
+                    <li><NavLink className={classes.navlink} to='prostagCDMO' onClick={onHamburgerNavClick}>CDMO
+                        Services</NavLink></li>
+                    <li><NavLink className={classes.navlink} to='specialProstag' onClick={onHamburgerNavClick}>Special
+                        Analogs</NavLink></li>
+                    <li><NavLink className={classes.navlink} to='specialProstag'
+                                 onClick={onHamburgerNavClick}>Contact</NavLink></li>
                 </ul>
             </div>
         </nav>
