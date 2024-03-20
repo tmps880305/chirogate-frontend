@@ -46,7 +46,7 @@ const Footer = (props) => {
                     <>
                         <div className={classes.footTitleBar}>
                             <div className={classes.footLogo}>
-                                <img src={logoImg} alt="This is a logo image."/>
+                                <img src={logoImg} alt="Chirogate in footer."/>
                                 <h2>Chirogate</h2>
                             </div>
                             <div className={classes.footBtn}>

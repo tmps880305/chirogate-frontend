@@ -27,7 +27,7 @@ const SubIntroCard = (props) => {
                     <p>{props.content}</p>
                 </div>
                 <div className={classes.subIntroImg}>
-                    <img src={props.img} alt="Sub introduction."/>
+                    <img src={props.img} alt="Introduction"/>
                 </div>
             </div>
         </div>

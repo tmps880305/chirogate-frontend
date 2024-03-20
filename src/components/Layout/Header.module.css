@@ -58,7 +58,7 @@
     justify-content: center;
 }
 
-.navbar ul {
+.navbar .navlist {
     width: 100%;
     padding: 0 10px;
     display: flex;
@@ -67,8 +67,9 @@
     justify-content: space-between;
 }
 
-.navbar li {
+.navlist .navlistli {
     height: 100%;
+    /*padding: 0 20px;*/
     list-style: none;
     cursor: pointer;
     display: flex;
@@ -76,30 +77,82 @@
 }
 
 .navlink {
-    /*font-size: var(--nav-size);*/
     color: var(--blk-prim);
     text-decoration: none;
 }
 
-.navlink:hover {
+.navlistli:hover .navlink {
     color: var(--or-prim);
     transition: color 0.2s ease-in-out;
 }
 
+.navlistli:hover .dropdown {
+    display: flex;
+}
 
 .navlink .navBut {
     font-size: 1rem;
     padding: .7rem 1.2rem;
 }
 
-/*.dropdown {*/
-/*    display: none;*/
-/*    position: absolute;*/
-/*    top: 0;*/
-/*    left: 0;*/
-/*    background-color: var(--grey-sec);*/
-/*    z-index: 1;*/
-/*}*/
+.dropWrap {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+}
+
+.dropWrap .dropContent {
+    width: 100%;
+    /*margin-top: 10px;*/
+    padding: 40px 20px;
+    opacity: 0;
+    position: absolute;
+    background-color: transparent;
+
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    z-index: 1;
+}
+
+.dropWrap .droplist {
+    width: 100%;
+    height: 80px;
+    padding: 0 20px;
+    background-color: var(--wh-prim);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.droplist .droplink {
+    text-align: center;
+}
+
+.dropContent .droplink {
+    color: var(--blk-prim);
+    text-decoration: none;
+}
+
+.dropWrap .droplist:hover {
+    background-color: var(--grey-prim);
+}
+
+.dropWrap .droplist:hover .droplink {
+    color: var(--or-prim);
+}
+
+.navlistli:hover .dropContent {
+    display: flex;
+    opacity: 1;
+    transition-duration: 500ms;
+}
 
 
 .burgerContainer {
