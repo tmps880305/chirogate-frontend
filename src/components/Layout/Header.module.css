@@ -52,7 +52,7 @@
 }
 
 .navbar {
-    width: 75%;
+    width: 70%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -63,16 +63,20 @@
     padding: 0 10px;
     display: flex;
     align-items: center;
-    column-gap: min(10px);
+    column-gap: min(20px);
     justify-content: space-between;
 }
 
 .navbar li {
+    height: 100%;
     list-style: none;
     cursor: pointer;
+    display: flex;
+    align-items: center;
 }
 
 .navlink {
+    /*font-size: var(--nav-size);*/
     color: var(--blk-prim);
     text-decoration: none;
 }
@@ -88,6 +92,15 @@
     padding: .7rem 1.2rem;
 }
 
+/*.dropdown {*/
+/*    display: none;*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    background-color: var(--grey-sec);*/
+/*    z-index: 1;*/
+/*}*/
+
 
 .burgerContainer {
     margin: 0 20px;
@@ -96,9 +109,9 @@
     justify-content: center;
 }
 
-@media only screen and (min-width: 1600px) {
+@media only screen and (max-width: 1600px) {
     .navbar {
-        width: 65%;
+        width: 78%;
     }
 }
 

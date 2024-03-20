@@ -17,31 +17,44 @@ const Header = (props) => {
         {
             label: "Home",
             altLabel: "Home",
+            subLabel: [],
             destination: ""
         },
         {
             label: "About",
             altLabel: "About",
+            subLabel: ['About us', 'GMP Compliant History', 'Facilities'],
             destination: "about"
         },
         {
             label: "Prostaglandins API’s",
             altLabel: "Prost API",
+            subLabel: ['Anti-Glaucoma', 'Pulmonary Arterial Hypertension', 'Other Indications', 'Veterinary Use'],
             destination: "prostagAPI"
         },
         {
             label: "Prostaglandins API CDMO Services",
             altLabel: "CDMO Services",
+            subLabel: ['Crystalline form', 'Highest purity & quality', 'Efficiency Process', 'Impurity & related substance'],
             destination: "prostagCDMO"
         },
         {
             label: "Special Intermediates Prostaglandins analogs",
             altLabel: "Special Analogs",
+            subLabel: [
+                'CP-1 for E2/F2 series Prostaglandin analogs',
+                'CP-2 for Benzindene Prostaglandin (Treprostinil)',
+                'CP-3 for Benzoprostacyclin (Beraprost)',
+                'CP-4 for Carbaprostacyclin (Iloprost)',
+                'Intermediate for Isomer Free Latanoprost/Latanoprostene Bunod',
+                'Intermediate for Isomer Free Travoprost'
+            ],
             destination: "specialProstag"
         },
         {
             label: "Contact",
             altLabel: "Contact",
+            subLabel: [],
             destination: "contact"
         }
 
@@ -89,7 +102,7 @@ const Header = (props) => {
                 </NavLink>
 
                 <nav className={classes.navbar}>
-                    <ul>
+                    <ul className={classes.navlist}>
                         {navLinks.map(navLink => {
                             let label;
                             if (navLink.label !== "Contact") {
@@ -99,7 +112,16 @@ const Header = (props) => {
                             }
 
                             return <li key={navLink.label}>
-                                <NavLink className={classes.navlink} to={navLink.destination}> {label} </NavLink></li>;
+                                <NavLink className={classes.navlink} to={navLink.destination}> {label} </NavLink>
+
+                                {/*<ul key={navLink.label} className={classes.dropdown}>*/}
+                                {/*    {navLink.subLabel.map(sub => (*/}
+                                {/*        <li key={sub}>*/}
+                                {/*            <NavLink to=''>{sub}</NavLink>*/}
+                                {/*        </li>*/}
+                                {/*    ))}*/}
+                                {/*</ul>*/}
+                            </li>;
 
                         })}
                     </ul>

@@ -14,7 +14,7 @@
     --h3-size: 2rem;
     --h4-size: 1.5rem;
     --p-size: 1.4rem;
-    --a-size: 1.4rem;
+    --a-size: 1rem;
     --btn-size: 1.4rem;
 
     --nav-width: 80px;
@@ -96,9 +96,9 @@ button {
         font-size: calc(var(--p-size) * 0.8);
     }
 
-    a {
-        font-size: calc(var(--a-size) * 0.8);
-    }
+    /*a {*/
+    /*    font-size: calc(var(--a-size) * 0.8);*/
+    /*}*/
 
     Button {
         font-size: calc(var(--btn-size) * 0.8);
