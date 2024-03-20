@@ -19,7 +19,6 @@
 
 .subIntroCard {
     width: 90%;
-    /*height: 580px;*/
     padding: 10% 2.5%;
     display: flex;
     flex-direction: row;
@@ -37,13 +36,8 @@
     align-items: flex-start;
 }
 
-.subIntroCnt h2 {
-    font-size: 2.8rem;
-}
-
 .subIntroCnt p {
     width: 100%;
-    font-size: 1.4rem;
 }
 
 .subIntroImg {
@@ -52,4 +46,28 @@
 
 .subIntroImg img {
     width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+    .subIntroContainer .reverse {
+        flex-direction: column;
+    }
+
+    .subIntroCard {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .subIntroCnt {
+        width: 70%;
+        align-items: center;
+    }
+
+    .subIntroCnt p {
+        text-align: center;
+    }
+
+    .subIntroImg {
+        width: 75%;
+    }
 }

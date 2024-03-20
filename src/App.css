@@ -10,31 +10,42 @@
     --grey-thr: #B6B6B6;
     --wh-prim: #FFFFFF;
 
+    --h2-size: 2.4rem;
+    --h3-size: 2rem;
+    --h4-size: 1.5rem;
+    --p-size: 1.4rem;
+    --btn-size: 1.4rem;
+
     color: var(--blk-prim);
 }
 
-:root h2 {
+h1, h2, h3, h4 {
     padding: 0;
     margin: 0;
-    /*font-weight: normal;*/
-    font-size: 2.4rem;
 }
 
-:root h3 {
-    padding: 0;
-    margin: 0;
-    /*font-weight: normal;*/
-    font-size: 2rem;
+h2 {
+    font-size: var(--h2-size);
 }
 
-:root h4 {
-    padding: 0;
-    margin: 0;
-    /*font-weight: normal;*/
-    font-size: 1.5rem;
+h3 {
+    font-size: var(--h3-size);
+}
+
+h4 {
+    font-size: var(--h4-size);
+}
+
+p {
+    font-size: var(--p-size);
+}
+
+button {
+    font-size: var(--btn-size);
 }
 
 * Button {
+    font-size: var(--btn-size);
     border-radius: 50px;
     border: 1px solid var(--blk-prim);
     background-color: var(--wh-prim);
@@ -54,5 +65,74 @@
     font-family: yu-gothic-pr6n, sans-serif;
     font-style: normal;
     font-weight: 300;
-    /*font-weight: lighter;*/
+}
+
+@media only screen and (min-width: 1600px) {
+
+}
+
+@media only screen and (max-width: 1366px) {
+    h2 {
+        font-size: calc(var(--h2-size) * 0.8);
+    }
+
+    h3 {
+        font-size: calc(var(--h3-size) * 0.8);
+    }
+
+    h4 {
+        font-size: calc(var(--h4-size) * 0.8);
+    }
+
+    p {
+        font-size: calc(var(--p-size) * 0.8);
+    }
+
+    Button {
+        font-size: calc(var(--btn-size) * 0.8);
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    h2 {
+        font-size: calc(var(--h2-size) * 0.6);
+    }
+
+    h3 {
+        font-size: calc(var(--h3-size) * 0.6);
+    }
+
+    h4 {
+        font-size: calc(var(--h4-size) * 0.6);
+    }
+
+    p {
+        font-size: calc(var(--p-size) * 0.6);
+    }
+
+    Button {
+        font-size: calc(var(--btn-size) * 0.6);
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    h2 {
+        font-size: calc(var(--h2-size) * 0.8);
+    }
+
+    h3 {
+        font-size: calc(var(--h3-size) * 0.8);
+    }
+
+    h4 {
+        font-size: calc(var(--h4-size) * 0.8);
+    }
+
+    p {
+        font-size: calc(var(--p-size) * 0.8);
+    }
+
+    Button {
+        font-size: calc(var(--btn-size) * 0.8);
+    }
 }

@@ -74,7 +74,10 @@ const Header = (props) => {
         window.addEventListener('scroll', handleScroll);
 
         return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+    }, [width]);
+
+    // useEffect(() => {
+    // }, [width]);
 
     return (
         <header className={classes.header} data-scroll={scrollState}>
@@ -86,7 +89,7 @@ const Header = (props) => {
                 <nav className={classes.navbar}>
                     <ul>
                         {navLinks.map(navLink => {
-                            let label = "";
+                            let label;
                             if (navLink.label !== "Contact") {
                                 label = width > 1366 ? navLink.label : navLink.altLabel;
                             } else {

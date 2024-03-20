@@ -1,6 +1,6 @@
 .introContainer {
     width: 100%;
-    height: 860px;
+    height: 45vw;
     background-color: var(--wh-prim);
     display: flex;
     justify-content: center;
@@ -8,11 +8,11 @@
 }
 
 .introCard {
-    width: 784px;
+    width: 50vw;
     display: flex;
     flex-direction: column;
     align-items: center;
-    row-gap: 40px;
+    row-gap: 1vw;
 }
 
 .introCard h3 {
@@ -20,23 +20,36 @@
 }
 
 .introCard h2 {
-    font-size: 2.8rem;
-    margin-bottom: 40px;
+    margin-bottom: 1vw;
     text-align: center;
 }
 
 .introCard p {
     width: 85%;
-    font-size: 1.4rem;
     text-align: center;
 }
 
-.introCard button {
-    width: 35%;
+.introCard Button {
+    width: 30%;
     aspect-ratio: 5/1;
     color: var(--wh-prim);
-    font-size: 1.4rem;
     background-color: var(--blu-prim);
     border: none;
-    border-radius: 80px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .introCard button {
+        aspect-ratio: 4/1;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .introContainer {
+        height: auto;
+        margin: 10% 0;
+    }
+
+    .introCard {
+        width: 70%;
+    }
 }

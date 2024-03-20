@@ -1,7 +1,6 @@
 import React from 'react';
 
 import classes from './SubIntroCard.module.css'
-import subIntroImg from "../../assets/subintro_1.png";
 
 const SubIntroCard = (props) => {
     let bkColor = '';
@@ -20,8 +19,6 @@ const SubIntroCard = (props) => {
             break;
     }
 
-    // const bkgyello = true;
-
     return (
         <div className={`${classes.subIntroContainer}  ${bkColor}`}>
             <div className={`${classes.subIntroCard} ${isReverse && classes.reverse} `}>
@@ -30,7 +27,7 @@ const SubIntroCard = (props) => {
                     <p>{props.content}</p>
                 </div>
                 <div className={classes.subIntroImg}>
-                    <img src={props.img} alt="Sub introduction image."/>
+                    <img src={props.img} alt="Sub introduction."/>
                 </div>
             </div>
         </div>
