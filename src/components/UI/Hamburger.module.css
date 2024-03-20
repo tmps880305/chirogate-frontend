@@ -83,7 +83,7 @@
     height: 100vh;
     background-color: var(--grey-prim);
     position: fixed;
-    top: 80px;
+    top: var(--nav-width);
     right: 0;
     display: none;
     opacity: 0;
@@ -109,10 +109,11 @@
     }
 }
 
+
 .menu-ul {
     width: 100%;
     height: 100%;
-    margin: 10% 0;
+    margin: 0;
     padding: 0;
     list-style: none;
     display: flex;
@@ -123,25 +124,33 @@
 
 .menu-ul li {
     height: 80px;
+    cursor: pointer;
     border-bottom: 1px solid var(--grey-prim);
     transition: 0.5s;
     display: flex;
     flex-direction: column;
-    /*justify-content: center;*/
+    justify-content: center;
     /*align-items: center;*/
+}
+
+.menu-ul li:hover {
+    background-color: var(--grey-sec);
+}
+
+.menu-ul li:hover .navlink {
+    color: var(--or-prim);
 }
 
 .menu-ul .navlink {
     text-decoration: none;
 }
 
-.menu-ul a {
-    color: var(--blk-prim);
-    font-size: 1.5em;
-    align-self: start;
+.menu-ul .navlink {
+    align-self: flex-start;
     margin-left: 25px;
     cursor: pointer;
 }
+
 
 .menu-bkg {
     /* The translucent mask to cover contents when menu opened */
@@ -150,9 +159,33 @@
     background-color: var(--blk-prim);
     opacity: 0.5;
     position: fixed;
-    top: 80px;
+    top: var(--nav-width);
     right: 0;
     z-index: 1;
 }
 
 /**/
+
+@media only screen and (max-width: 768px) {
+    .menu {
+        width: 100%;
+    }
+
+    .open .menu {
+        animation-name: swipeDown;
+    }
+
+    @keyframes swipeDown {
+        /* Swipe in animation for menu block */
+        0% {
+            transform: translateY(-100px);
+        }
+        100% {
+            transform: translateY(0px);
+        }
+    }
+
+    .menu-ul .navlink {
+        align-self: center;
+    }
+}

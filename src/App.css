@@ -14,7 +14,10 @@
     --h3-size: 2rem;
     --h4-size: 1.5rem;
     --p-size: 1.4rem;
+    --a-size: 1.4rem;
     --btn-size: 1.4rem;
+
+    --nav-width: 80px;
 
     color: var(--blk-prim);
 }
@@ -38,6 +41,11 @@ h4 {
 
 p {
     font-size: var(--p-size);
+}
+
+a {
+    font-size: var(--a-size);
+    color: var(--blk-prim);
 }
 
 button {
@@ -88,6 +96,10 @@ button {
         font-size: calc(var(--p-size) * 0.8);
     }
 
+    a {
+        font-size: calc(var(--a-size) * 0.8);
+    }
+
     Button {
         font-size: calc(var(--btn-size) * 0.8);
     }
@@ -116,6 +128,10 @@ button {
 }
 
 @media only screen and (max-width: 768px) {
+    :root {
+        --nav-width: 60px;
+    }
+
     h2 {
         font-size: calc(var(--h2-size) * 0.8);
     }

@@ -1,7 +1,7 @@
 .landing-container {
     width: 100%;
     aspect-ratio: 5/2;
-    margin-top: 80px;
+    margin-top: var(--nav-width);
     position: relative;
     background-color: var(--grey-prim);
     padding-bottom: 10%;
@@ -29,11 +29,4 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-@media only screen and (max-width: 768px) {
-    .landing-container {
-        /*margin-top: 40px;*/
-    }
-
 }

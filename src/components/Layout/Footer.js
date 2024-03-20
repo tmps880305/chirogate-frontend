@@ -4,8 +4,10 @@ import classes from './Footer.module.css';
 import logoImg from '../../assets/logo_img.png';
 import Button from "../UI/Button";
 import FootNavigation from "./FootNavigation";
+import useWindowSize from "../hooks/use-windowsize";
 
 const Footer = (props) => {
+    const {width} = useWindowSize();
 
     const DUMMY_FOOT_NAVI = [
         {
@@ -40,26 +42,29 @@ const Footer = (props) => {
     return (
         <div className={classes.footer}>
             <div className={classes.footContainer}>
-                <div className={classes.footTitleBar}>
-                    <div className={classes.footLogo}>
-                        <img src={logoImg} alt="This is a logo image."/>
-                        <h2>Chirogate</h2>
-                    </div>
-                    <div className={classes.footBtn}>
-                        <Button className={classes.footBtnDark}>Recruit</Button>
-                        <Button>Contact</Button>
-                    </div>
-                </div>
+                {width > 768 &&
+                    <>
+                        <div className={classes.footTitleBar}>
+                            <div className={classes.footLogo}>
+                                <img src={logoImg} alt="This is a logo image."/>
+                                <h2>Chirogate</h2>
+                            </div>
+                            <div className={classes.footBtn}>
+                                <Button className={classes.footBtnDark}>Recruit</Button>
+                                <Button>Contact</Button>
+                            </div>
+                        </div>
 
-                <div className={classes.footNavi}>
-                    {DUMMY_FOOT_NAVI.map(nav => (
-                        <FootNavigation
-                            key={nav.title}
-                            title={nav.title}
-                            contents={nav.contents}
-                        />
-                    ))}
-                </div>
+                        <div className={classes.footNavi}>
+                            {DUMMY_FOOT_NAVI.map(nav => (
+                                <FootNavigation
+                                    key={nav.title}
+                                    title={nav.title}
+                                    contents={nav.contents}
+                                />
+                            ))}
+                        </div>
+                    </>}
                 <div className={classes.copyright}>
                     <p>Copyright © 2024 CHIROGATE INTERNATIONAL INC. All rights reserved.</p>
                 </div>

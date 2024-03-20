@@ -48,6 +48,7 @@ const Header = (props) => {
     ]
 
     useEffect(() => {
+
         const handleScroll = () => {
             const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
             const thresholdInPixels = 0.05 * scrollHeight;
@@ -76,8 +77,9 @@ const Header = (props) => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, [width]);
 
-    // useEffect(() => {
-    // }, [width]);
+    useEffect(() => {
+
+    }, [width]);
 
     return (
         <header className={classes.header} data-scroll={scrollState}>
