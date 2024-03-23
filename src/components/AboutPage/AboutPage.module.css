@@ -35,28 +35,32 @@
     aspect-ratio: 1;
 }
 
-.abtFac {
+.abtCnt {
+    width: 100%;
+}
+
+.abtCnt .abtFac {
     margin: 4% 0;
     display: flex;
     justify-content: space-around;
 
 }
 
-.abtFac img {
+.abtCnt img {
     width: 25%;
 }
 
-.abtCard p {
+.abtCnt p {
     margin: 2%;
     line-height: 2.5;
     font-size: calc(var(--p-size) * 0.8);
 }
 
-.abtCard ul {
+.abtCnt ul {
     margin: 2% 0;
 }
 
-.abtCard li {
+.abtCnt li {
     line-height: 2.5;
     font-size: calc(var(--p-size) * 0.8);
 }

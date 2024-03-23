@@ -15,74 +15,122 @@ const Header = (props) => {
 
         const navLinks = [
             {
-                label: "Home",
-                altLabel: "Home",
+                label: {main: "Home", alt: "Home", dest: ""},
                 subLabel: [],
-                altSubLabel: [],
-                destination: {
-                    pathname: ''
-                }
             },
             {
-                label: "About us",
-                altLabel: "About us",
-                subLabel: ['About us', 'GMP Compliant History', 'Facilities'],
-                altSubLabel: ['About us', 'History', 'Facilities'],
-                destination: {
-                    pathname: 'about',
-                    state: {scrollTo: 'section1'}
-                }
+                label: {main: "About us", alt: "About us", dest: "about"},
+                subLabel: [
+                    {
+                        main: "About us",
+                        alt: "About us",
+                        state: {scrollTo: 'section1'}
+                    },
+                    {
+                        main: "GMP Compliant History",
+                        alt: "History",
+                        state: {scrollTo: 'section2'}
+                    },
+                    {
+                        main: "Facilities",
+                        alt: "Facilities",
+                        state: {scrollTo: 'section3'}
+                    }
+                ]
             },
             {
-                label: "Prostaglandins API’s",
-                altLabel: "Prost API",
-                subLabel: ['Anti-Glaucoma', 'Pulmonary Arterial Hypertension', 'Other Indications', 'Veterinary Use'],
-                altSubLabel: ['Anti-Glaucoma', 'PAH', 'Other Indications', 'Veterinary Use'],
-                destination: {
-                    pathname: 'prostagAPI'
-                }
+                label: {main: "Prostaglandins API’s", alt: "Prost API", dest: "prostagAPI"},
+                subLabel: [
+                    {
+                        main: "Anti-Glaucoma",
+                        alt: "Anti-Glaucoma",
+                        state: {scrollTo: 'section1'}
+                    },
+                    {
+                        main: "Pulmonary Arterial Hypertension",
+                        alt: "PAH",
+                        state: {scrollTo: 'section2'}
+                    },
+                    {
+                        main: "Other Indications",
+                        alt: "Other Indications",
+                        state: {scrollTo: 'section3'}
+                    },
+                    {
+                        main: "Veterinary Use",
+                        alt: "Veterinary Use",
+                        state: {scrollTo: 'section4'}
+                    }
+                ]
             },
             {
-                label: "Prostaglandins API CDMO Services",
-                altLabel: "CDMO Services",
-                subLabel: ['Crystalline form', 'Highest purity & quality', 'Efficiency Process', 'Supply of Impurity & related substance'],
-                altSubLabel: ['Crystalline form', 'Highest purity / quality', 'Efficiency Process', 'SoI & related substance'],
-                destination: {
-                    pathname: 'prostagCDMO'
-                }
+                label: {main: "Prostaglandins API CDMO Services", alt: "CDMO Services", dest: "prostagCDMO"},
+                subLabel: [
+                    {
+                        main: "Crystalline form",
+                        alt: "Crystalline form",
+                        state: {scrollTo: 'section1'}
+                    },
+                    {
+                        main: "Highest purity & quality",
+                        alt: "Highest purity / quality",
+                        state: {scrollTo: 'section2'}
+                    },
+                    {
+                        main: "Efficiency Process",
+                        alt: "Efficiency Process",
+                        state: {scrollTo: 'section3'}
+                    },
+                    {
+                        main: "Supply of Impurity & related substance",
+                        alt: "SoI & related substance",
+                        state: {scrollTo: 'section4'}
+                    }
+                ]
+            },
+            {
+                label: {
+                    main: "Special Intermediates Prostaglandins analogs",
+                    alt: "Special Analogs",
+                    dest: "specialProstag"
+                },
+                subLabel: [
+                    {
+                        main: "CP-1 for E2/F2 series Prostaglandin analogs",
+                        alt: "CP-1 - E2/F2 series",
+                        state: {scrollTo: 'section1'}
+                    },
+                    {
+                        main: "CP-2 for Benzindene Prostaglandin (Treprostinil)",
+                        alt: "CP-2 - Benzindene",
+                        state: {scrollTo: 'section2'}
+                    },
+                    {
+                        main: "CP-3 for Benzoprostacyclin (Beraprost)",
+                        alt: "CP-3 - Benzoprostacyclin",
+                        state: {scrollTo: 'section3'}
+                    },
+                    {
+                        main: "CP-4 for Carbaprostacyclin (Iloprost)",
+                        alt: "CP-4 - Carbaprostacyclin",
+                        state: {scrollTo: 'section4'}
+                    },
+                    {
+                        main: "Intermediate for Isomer Free Latanoprost/Latanoprostene Bunod",
+                        alt: "Isomer Free Lat Bunod",
+                        state: {scrollTo: 'section5'}
+                    },
+                    {
+                        main: "Intermediate for Isomer Free Travoprost",
+                        alt: "Isomer Free Travoprost",
+                        state: {scrollTo: 'section6'}
+                    }
+                ]
 
             },
             {
-                label: "Special Intermediates Prostaglandins analogs",
-                altLabel: "Special Analogs",
-                subLabel: [
-                    'CP-1 for E2/F2 series Prostaglandin analogs',
-                    'CP-2 for Benzindene Prostaglandin (Treprostinil)',
-                    'CP-3 for Benzoprostacyclin (Beraprost)',
-                    'CP-4 for Carbaprostacyclin (Iloprost)',
-                    'Intermediate for Isomer Free Latanoprost/Latanoprostene Bunod',
-                    'Intermediate for Isomer Free Travoprost'
-                ],
-                altSubLabel: [
-                    'CP-1 - E2/F2 series',
-                    'CP-2 - Benzindene',
-                    'CP-3 - Benzoprostacyclin',
-                    'CP-4 - Carbaprostacyclin',
-                    'Isomer Free Lat Bunod',
-                    'Isomer Free Travoprost'
-                ],
-                destination: {
-                    pathname: 'specialProstag'
-                }
-            },
-            {
-                label: "Contact",
-                altLabel: "Contact",
-                subLabel: [],
-                altSubLabel: [],
-                destination: {
-                    pathname: 'contact'
-                }
+                label: {main: "Contact", alt: "Contact", dest: "contact"},
+                subLabel: []
             }
 
         ]
@@ -130,26 +178,27 @@ const Header = (props) => {
                             {navLinks.map(navLink => {
                                 let label;
                                 if (navLink.label !== "Contact") {
-                                    label = width > 1366 ? navLink.label : navLink.altLabel;
+                                    label = width > 1366 ? navLink.label.main : navLink.label.alt;
                                 } else {
                                     label = <Button className={classes.navBut}>{navLink.label}</Button>;
                                 }
 
-                                return <li key={navLink.label} className={classes.navlistli}>
+                                return <li key={navLink.label.main} className={classes.navlistli}>
                                     <div className={classes.dropWrap}>
                                         <NavLink className={classes.navlink}
-                                                 to={navLink.destination.pathname}
-                                                 state={navLink.destination.state}> {label} </NavLink>
+                                                 to={navLink.label.dest}
+                                        > {label} </NavLink>
                                         {navLink.subLabel.length > 0 &&
                                             <ul key={navLink.label} className={classes.dropContent}>
                                                 {width > 1366 && navLink.subLabel.map(sub => (
-                                                    <li key={sub} className={classes.droplist}>
-                                                        <NavLink className={classes.droplink} to=''>{sub}</NavLink>
+                                                    <li key={sub.main} className={classes.droplist}>
+                                                        <NavLink className={classes.droplink} to={navLink.label.dest}
+                                                                 state={sub.state}>{sub.main}</NavLink>
                                                     </li>
                                                 ))}
-                                                {width < 1366 && navLink.altSubLabel.map(sub => (
-                                                    <li key={sub} className={classes.droplist}>
-                                                        <NavLink className={classes.droplink} to=''>{sub}</NavLink>
+                                                {width < 1366 && navLink.subLabel.map(sub => (
+                                                    <li key={sub.main} className={classes.droplist}>
+                                                        <NavLink className={classes.droplink} to=''>{sub.main}</NavLink>
                                                     </li>
                                                 ))}
                                             </ul>}
