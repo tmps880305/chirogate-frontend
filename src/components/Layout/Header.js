@@ -19,28 +19,38 @@ const Header = (props) => {
                 altLabel: "Home",
                 subLabel: [],
                 altSubLabel: [],
-                destination: ""
+                destination: {
+                    pathname: ''
+                }
             },
             {
                 label: "About us",
                 altLabel: "About us",
                 subLabel: ['About us', 'GMP Compliant History', 'Facilities'],
                 altSubLabel: ['About us', 'History', 'Facilities'],
-                destination: "about"
+                destination: {
+                    pathname: 'about',
+                    state: {scrollTo: 'section1'}
+                }
             },
             {
                 label: "Prostaglandins API’s",
                 altLabel: "Prost API",
                 subLabel: ['Anti-Glaucoma', 'Pulmonary Arterial Hypertension', 'Other Indications', 'Veterinary Use'],
                 altSubLabel: ['Anti-Glaucoma', 'PAH', 'Other Indications', 'Veterinary Use'],
-                destination: "prostagAPI"
+                destination: {
+                    pathname: 'prostagAPI'
+                }
             },
             {
                 label: "Prostaglandins API CDMO Services",
                 altLabel: "CDMO Services",
                 subLabel: ['Crystalline form', 'Highest purity & quality', 'Efficiency Process', 'Supply of Impurity & related substance'],
                 altSubLabel: ['Crystalline form', 'Highest purity / quality', 'Efficiency Process', 'SoI & related substance'],
-                destination: "prostagCDMO"
+                destination: {
+                    pathname: 'prostagCDMO'
+                }
+
             },
             {
                 label: "Special Intermediates Prostaglandins analogs",
@@ -53,7 +63,7 @@ const Header = (props) => {
                     'Intermediate for Isomer Free Latanoprost/Latanoprostene Bunod',
                     'Intermediate for Isomer Free Travoprost'
                 ],
-                altSubLabel:[
+                altSubLabel: [
                     'CP-1 - E2/F2 series',
                     'CP-2 - Benzindene',
                     'CP-3 - Benzoprostacyclin',
@@ -61,14 +71,18 @@ const Header = (props) => {
                     'Isomer Free Lat Bunod',
                     'Isomer Free Travoprost'
                 ],
-                destination: "specialProstag"
+                destination: {
+                    pathname: 'specialProstag'
+                }
             },
             {
                 label: "Contact",
                 altLabel: "Contact",
                 subLabel: [],
                 altSubLabel: [],
-                destination: "contact"
+                destination: {
+                    pathname: 'contact'
+                }
             }
 
         ]
@@ -107,7 +121,7 @@ const Header = (props) => {
         return (
             <header className={classes.header} data-scroll={scrollState}>
                 <div className={classes.headerContainer}>
-                    <NavLink className={classes.logo} to=''>
+                    <NavLink className={classes.logo} to="">
                         <img src={logoSrc} alt="Company name: Chirogate."/>
                     </NavLink>
 
@@ -123,15 +137,17 @@ const Header = (props) => {
 
                                 return <li key={navLink.label} className={classes.navlistli}>
                                     <div className={classes.dropWrap}>
-                                        <NavLink className={classes.navlink} to={navLink.destination}> {label} </NavLink>
+                                        <NavLink className={classes.navlink}
+                                                 to={navLink.destination.pathname}
+                                                 state={navLink.destination.state}> {label} </NavLink>
                                         {navLink.subLabel.length > 0 &&
                                             <ul key={navLink.label} className={classes.dropContent}>
-                                                {width>1366 && navLink.subLabel.map(sub => (
+                                                {width > 1366 && navLink.subLabel.map(sub => (
                                                     <li key={sub} className={classes.droplist}>
                                                         <NavLink className={classes.droplink} to=''>{sub}</NavLink>
                                                     </li>
                                                 ))}
-                                                {width<1366 && navLink.altSubLabel.map(sub => (
+                                                {width < 1366 && navLink.altSubLabel.map(sub => (
                                                     <li key={sub} className={classes.droplist}>
                                                         <NavLink className={classes.droplink} to=''>{sub}</NavLink>
                                                     </li>
