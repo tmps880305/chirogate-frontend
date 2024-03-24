@@ -119,32 +119,28 @@ const Header = (props) => {
 
             <nav className={classes.navbar}>
                 <ul className={classes.navlist}>
-                    {navLinks.map(navLink => {
-                        let label;
-                        if (navLink.label !== "Contact") {
-                            label = width > 1366 ? navLink.label.main : navLink.label.alt;
-                        } else {
-                            label = <Button className={classes.navBut}>{navLink.label}</Button>;
-                        }
-
-                        return <li key={navLink.label.main} className={classes.navlistli}>
-                            <div className={classes.dropWrap}>
-                                <NavLink className={classes.navlink}
-                                         to={navLink.label.dest}
-                                > {label} </NavLink>
-                                {navLink.subLabel.length > 0 &&
-                                    <ul key={navLink.label} className={classes.dropContent}>
-                                        {navLink.subLabel.map(sub =>
-                                            (<li key={sub.main} className={classes.droplist}>
-                                                    <NavLink className={classes.droplink} to={navLink.label.dest}
-                                                             state={sub.state}>{width > 1366 ? sub.main : sub.alt}</NavLink>
-                                                </li>
-                                            ))}
-                                    </ul>}
-                            </div>
-                        </li>;
-
-                    })}
+                    {navLinks.map(navLink => (
+                            <li key={navLink.label.main} className={classes.navlistli}>
+                                <div className={classes.dropWrap}>
+                                    <NavLink className={classes.navlink}
+                                             to={navLink.label.dest}
+                                    > {
+                                        navLink.label.main !== "Contact" ? (width > 1366 ? navLink.label.main : navLink.label.alt) :
+                                            (<Button className={classes.navBut}>{navLink.label.main}</Button>)
+                                    } </NavLink>
+                                    {navLink.subLabel.length > 0 &&
+                                        <ul key={navLink.label} className={classes.dropContent}>
+                                            {navLink.subLabel.map(sub =>
+                                                (<li key={sub.main} className={classes.droplist}>
+                                                        <NavLink className={classes.droplink} to={navLink.label.dest}
+                                                                 state={sub.state}>{width > 1366 ? sub.main : sub.alt}</NavLink>
+                                                    </li>
+                                                ))}
+                                        </ul>}
+                                </div>
+                            </li>
+                        )
+                    )}
                 </ul>
             </nav>
             <div className={classes.burgerContainer}>
