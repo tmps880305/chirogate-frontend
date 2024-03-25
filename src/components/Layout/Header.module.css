@@ -42,17 +42,25 @@
 }
 
 .logoContainer {
-    /*width: fit-content;*/
     height: 50%;
+    aspect-ratio: 7/1;
     margin: 0 2%;
 }
 
+[data-scroll="scrolled"] .logoContainer {
+    aspect-ratio: initial;
+}
+
 .logo {
+    width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
 }
 
+.logo img {
+    width: 100%;
+}
 
 [data-scroll="scrolled"] .navbar {
     width: 95%;
