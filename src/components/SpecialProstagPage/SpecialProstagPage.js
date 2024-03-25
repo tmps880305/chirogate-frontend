@@ -1,7 +1,7 @@
-import React, {useCallback, useEffect, useState} from 'react';
+import React from 'react';
+import useScrollToSection from "../hooks/useScrollToSection";
 
 import classes from './SpecialProstagPage.module.css'
-import {useLocation, useNavigate} from "react-router-dom";
 import abtBanner from "../../assets/banner.png";
 import logoImg from "../../assets/logo_img.png";
 import d1Img from "../../assets/special/d1.png";
@@ -45,46 +45,8 @@ const SpecialProstagPage = (props) => {
         },
 
     ];
-    const location = useLocation();
-    const navigate = useNavigate();
-    const [sectionRefs, setSectionRefs] = useState({});
-    const [readySections, setReadySections] = useState({});
 
-    // Function to create ref dynamically
-    const createRef = useCallback((sectionId) => {
-        return (element) => {
-            if (element && !sectionRefs[sectionId]) {
-                setSectionRefs((prevRefs) => ({
-                    ...prevRefs,
-                    [sectionId]: element // Directly store the DOM element
-                }));
-                setReadySections((prev) => ({...prev, [sectionId]: true})); // Mark as ready
-            }
-        };
-    }, [sectionRefs]);
-
-    useEffect(() => {
-        const scrollToSection = (sectionId) => {
-            const ref = sectionRefs[sectionId];
-            if (ref) {
-                ref.scrollIntoView({behavior: 'smooth'});
-                /*
-                Scroll back slightly to make better position for viewing.
-                Timeout could not be too short, or the function will fail to scroll.
-                Might be influence by loading time.
-                */
-                setTimeout(() => window.scrollBy({top: -100, behavior: 'smooth'}), 500);
-            }
-        };
-
-
-        if (location.state?.scrollTo && readySections[location.state.scrollTo]) {
-            scrollToSection(location.state.scrollTo);
-
-            // clear location state
-            navigate(location.pathname, {replace: true, state: {}});
-        }
-    }, [location, navigate, sectionRefs, readySections]);
+    const {createRef} = useScrollToSection();
 
     const banner =
         <div className={classes.abtBannerWrap}>
