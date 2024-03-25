@@ -4,9 +4,10 @@ import useScrollToSection from "../hooks/useScrollToSection";
 import classes from './ProstagCDMOPage.module.css'
 import logoImg from "../../assets/logo_img.png";
 import c3Img from "../../assets/cdmo/c3.png";
-import Banner from "../UI/Banner";
+import PageTemplate from "../UI/PageTemplate";
 
 const ProstagCDMOPage = (props) => {
+        const TITLE = "Prostaglandins API CDMO Services";
         const DUMMY_CNT = [
             {
                 id: 0,
@@ -200,65 +201,63 @@ const ProstagCDMOPage = (props) => {
         const {createRef} = useScrollToSection();
 
         return (
-            <div className={classes.abt}>
-                <Banner>Prostaglandins API CDMO Services</Banner>
-                <div className={classes.abtContainer}>
-                    {DUMMY_CNT.map((cnt, index) => {
 
-                        const sectionId = `section${index + 1}`;
-                        let contentToShow;
+        <PageTemplate title={TITLE}>
+            {DUMMY_CNT.map((cnt, index) => {
 
-                        if (index === 0 || index === 1) {
-                            contentToShow =
-                                <table className={classes.abtTable}>
-                                    <thead>
-                                    <tr key={`tr-th`}>
-                                        {cnt.content.ths.map((th, index) => (
-                                            <th key={`th-${index}`}>{th}</th>
-                                        ))}
-                                    </tr>
-                                    {cnt.content.tds.map((td, index) => (
-                                        <tr key={`tr-${index}`}>
-                                            {td.map((tcnt, index) => (
-                                                <td key={`li-${index}`}>{tcnt}</td>
-                                            ))}
-                                        </tr>
+                const sectionId = `section${index + 1}`;
+                let contentToShow;
+
+                if (index === 0 || index === 1) {
+                    contentToShow =
+                        <table className={classes.abtTable}>
+                            <thead>
+                            <tr key={`tr-th`}>
+                                {cnt.content.ths.map((th, index) => (
+                                    <th key={`th-${index}`}>{th}</th>
+                                ))}
+                            </tr>
+                            {cnt.content.tds.map((td, index) => (
+                                <tr key={`tr-${index}`}>
+                                    {td.map((tcnt, index) => (
+                                        <td key={`li-${index}`}>{tcnt}</td>
                                     ))}
-                                    </thead>
-                                </table>
-                        } else if (index === 2) {
-                            contentToShow =
-                                <div className={classes.effSection}>
-                                    <p>{cnt.content}</p>
-                                    <img src={cnt.img.src} alt={cnt.img.alt}/>
-                                </div>
-                        } else {
-                            contentToShow =
-                                <div className={classes.suppSection}>
-                                    <h4>To be updated ...</h4>
-                                </div>
-                        }
+                                </tr>
+                            ))}
+                            </thead>
+                        </table>
+                } else if (index === 2) {
+                    contentToShow =
+                        <div className={classes.effSection}>
+                            <p>{cnt.content}</p>
+                            <img src={cnt.img.src} alt={cnt.img.alt}/>
+                        </div>
+                } else {
+                    contentToShow =
+                        <div className={classes.suppSection}>
+                            <h4>To be updated ...</h4>
+                        </div>
+                }
 
-                        return (
-                            <section className={classes.abtCard} key={sectionId} ref={createRef(sectionId)} id={sectionId}>
-                                <div className={classes.abtTitle}>
-                                    <img className={classes.ttlImg} src={logoImg} alt="Chirogate in About."/>
-                                    <h3>{cnt.title}</h3>
-                                </div>
-                                <div className={classes.abtCnt}>
-                                    <p>{cnt.comment}</p>
+                return (
+                    <section className={classes.abtCard} key={sectionId} ref={createRef(sectionId)} id={sectionId}>
+                        <div className={classes.abtTitle}>
+                            <img className={classes.ttlImg} src={logoImg} alt="Chirogate in About."/>
+                            <h3>{cnt.title}</h3>
+                        </div>
+                        <div className={classes.abtCnt}>
+                            <p>{cnt.comment}</p>
 
-                                    {contentToShow}
+                            {contentToShow}
 
-                                </div>
+                        </div>
 
-                            </section>
-                        )
+                    </section>
+                )
 
-                    })}
-                </div>
-            </div>
-        )
+            })}
+        </PageTemplate>
+    )
     }
 ;
 

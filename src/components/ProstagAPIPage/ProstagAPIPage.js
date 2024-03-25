@@ -3,9 +3,10 @@ import useScrollToSection from "../hooks/useScrollToSection";
 
 import classes from './ProstagAPIPage.module.css'
 import logoImg from "../../assets/logo_img.png";
-import Banner from "../UI/Banner";
+import PageTemplate from "../UI/PageTemplate";
 
 const ProstagAPIPage = (props) => {
+    const TITLE = "Prostaglandins API’s";
     const DUMMY_CNT = [
         {
             id: 0,
@@ -319,60 +320,57 @@ const ProstagAPIPage = (props) => {
     const {createRef} = useScrollToSection();
 
     return (
-        <div className={classes.abt}>
-            <Banner>Prostaglandins API’s</Banner>
-            <div className={classes.abtContainer}>
-                {DUMMY_CNT.map((cnt, index) => {
+        <PageTemplate title={TITLE}>
+            {DUMMY_CNT.map((cnt, index) => {
 
-                    const sectionId = `section${index + 1}`;
+                const sectionId = `section${index + 1}`;
 
-                    return (
-                        <section className={classes.abtCard} key={sectionId} ref={createRef(sectionId)} id={sectionId}>
-                            <div className={classes.abtTitle}>
-                                <img className={classes.ttlImg} src={logoImg} alt="Chirogate in About."/>
-                                <h3>{cnt.title}</h3>
-                            </div>
-                            <div className={classes.abtCnt}>
-                                <p>{cnt.comment}</p>
-                                <table className={classes.abtTable}>
-                                    <thead>
-                                    <tr key={`tr-th`}>
-                                        {cnt.content.ths.map((th, index) => (
-                                            th !== '' && <th key={`th-${index}`}>{th}</th>
-                                        ))}
-                                    </tr>
-                                    {cnt.content.tds.map((td, index) => (
-                                        <tr key={`tr-${index}`}>
-                                            {td.map((tcnt, index) => {
-                                                if (index === 2 || index === 3 || index === 4 || index === 6) {
-                                                    if (tcnt.length > 0) {
-                                                        return <td key={`td-${index}`}>
-                                                            <ul>
-                                                                {tcnt.map((tc, index) => (
-                                                                    <li key={`li-${index}`}>{tc}</li>
-                                                                ))}
-                                                            </ul>
-                                                        </td>;
-                                                    } else {
-                                                        return null;
-                                                    }
-                                                } else {
-                                                    return <td key={`li-${index}`}>{tcnt}</td>;
-
-                                                }
-                                            })}
-                                        </tr>
+                return (
+                    <section className={classes.abtCard} key={sectionId} ref={createRef(sectionId)} id={sectionId}>
+                        <div className={classes.abtTitle}>
+                            <img className={classes.ttlImg} src={logoImg} alt="Chirogate in About."/>
+                            <h3>{cnt.title}</h3>
+                        </div>
+                        <div className={classes.abtCnt}>
+                            <p>{cnt.comment}</p>
+                            <table className={classes.abtTable}>
+                                <thead>
+                                <tr key={`tr-th`}>
+                                    {cnt.content.ths.map((th, index) => (
+                                        th !== '' && <th key={`th-${index}`}>{th}</th>
                                     ))}
-                                    </thead>
-                                </table>
-                            </div>
+                                </tr>
+                                {cnt.content.tds.map((td, index) => (
+                                    <tr key={`tr-${index}`}>
+                                        {td.map((tcnt, index) => {
+                                            if (index === 2 || index === 3 || index === 4 || index === 6) {
+                                                if (tcnt.length > 0) {
+                                                    return <td key={`td-${index}`}>
+                                                        <ul>
+                                                            {tcnt.map((tc, index) => (
+                                                                <li key={`li-${index}`}>{tc}</li>
+                                                            ))}
+                                                        </ul>
+                                                    </td>;
+                                                } else {
+                                                    return null;
+                                                }
+                                            } else {
+                                                return <td key={`li-${index}`}>{tcnt}</td>;
 
-                        </section>
-                    )
+                                            }
+                                        })}
+                                    </tr>
+                                ))}
+                                </thead>
+                            </table>
+                        </div>
 
-                })}
-            </div>
-        </div>
+                    </section>
+                )
+
+            })}
+        </PageTemplate>
     )
 };
 

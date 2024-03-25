@@ -1,0 +1,23 @@
+.abt {
+    width: 100%;
+    /*height: 800px;*/
+    background-color: var(--grey-prim);
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.abtContainer {
+    width: 75%;
+    margin-top: 2%;
+    display: flex;
+    flex-direction: column;
+    /*align-items: center;*/
+}
+
+@media only screen and (max-width: 768px) {
+    .abtContainer {
+        width: 95%;
+    }
+}

@@ -9,9 +9,10 @@ import d3Img from "../../assets/special/d3.png";
 import d4Img from "../../assets/special/d4.png";
 import d5Img from "../../assets/special/d5.png";
 import d6Img from "../../assets/special/d6.png";
-import Banner from "../UI/Banner";
+import PageTemplate from "../UI/PageTemplate";
 
 const SpecialProstagPage = (props) => {
+    const TITLE = "Special Intermediates Prostaglandins analogs";
     const DUMMY_CNT = [
         {
             id: 0,
@@ -48,29 +49,26 @@ const SpecialProstagPage = (props) => {
     const {createRef} = useScrollToSection();
 
     return (
-        <div className={classes.abt}>
-            <Banner>Special Intermediates Prostaglandins analogs</Banner>
-            <div className={classes.abtContainer}>
-                {DUMMY_CNT.map((cnt, index) => {
+        <PageTemplate title={TITLE}>
+            {DUMMY_CNT.map((cnt, index) => {
 
-                    const sectionId = `section${index + 1}`;
+                const sectionId = `section${index + 1}`;
 
-                    return (
-                        <section className={classes.abtCard} key={sectionId} ref={createRef(sectionId)} id={sectionId}>
-                            <div className={classes.abtTitle}>
-                                <img className={classes.ttlImg} src={logoImg} alt="Chirogate in About."/>
-                                <h3>{cnt.title}</h3>
-                            </div>
-                            <div className={classes.abtCnt}>
-                                <img src={cnt.img.src} alt={cnt.img.alt}/>
-                            </div>
+                return (
+                    <section className={classes.abtCard} key={sectionId} ref={createRef(sectionId)} id={sectionId}>
+                        <div className={classes.abtTitle}>
+                            <img className={classes.ttlImg} src={logoImg} alt="Chirogate in About."/>
+                            <h3>{cnt.title}</h3>
+                        </div>
+                        <div className={classes.abtCnt}>
+                            <img src={cnt.img.src} alt={cnt.img.alt}/>
+                        </div>
 
-                        </section>
-                    )
+                    </section>
+                )
 
-                })}
-            </div>
-        </div>
+            })}
+        </PageTemplate>
     )
 };
 

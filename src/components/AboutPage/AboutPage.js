@@ -6,9 +6,10 @@ import SubIntroImg1 from "../../assets/subintro_1.png";
 import SubIntroImg2 from "../../assets/subintro_2.png";
 import SubIntroImg3 from "../../assets/subintro_3.png";
 import logoImg from '../../assets/logo_img.png';
-import Banner from "../UI/Banner";
+import PageTemplate from "../UI/PageTemplate";
 
 const AboutPage = (props) => {
+    const TITLE = "About us";
     const DUMMY_CNT = [
         {
             id: 0,
@@ -42,48 +43,47 @@ const AboutPage = (props) => {
     const {createRef} = useScrollToSection();
 
     return (
-        <div className={classes.abt}>
-            <Banner>About us</Banner>
-            <div className={classes.abtContainer}>
-                {DUMMY_CNT.map((cnt, index) => {
-                    let cardCnt = "";
-                    switch (cnt.id) {
-                        case 0:
-                            cardCnt = <p>{cnt.content}</p>;
-                            break;
-                        case 1:
-                            cardCnt = <ul>
-                                {cnt.items.map((item, index) => (<li key={index}>{item}</li>))}
-                            </ul>;
-                            break;
-                        case 2:
-                            cardCnt = <div className={classes.abtFac}>
-                                {cnt.images.map(img => (
-                                    <img key={img.id} src={img.img} alt={`Introduction ${img.id}`}/>
-                                ))}
-                            </div>;
-                            break;
-                        default:
-                            break;
-                    }
+        <PageTemplate title={TITLE}>
+            {DUMMY_CNT.map((cnt, index) => {
+                let cardCnt = "";
+                switch (cnt.id) {
+                    case 0:
+                        cardCnt = <p>{cnt.content}</p>;
+                        break;
+                    case 1:
+                        cardCnt = <ul>
+                            {cnt.items.map((item, index) => (<li key={index}>{item}</li>))}
+                        </ul>;
+                        break;
+                    case 2:
+                        cardCnt = <div className={classes.abtFac}>
+                            {cnt.images.map(img => (
+                                <img key={img.id} src={img.img} alt={`Introduction ${img.id}`}/>
+                            ))}
+                        </div>;
+                        break;
+                    default:
+                        break;
+                }
 
-                    const sectionId = `section${index + 1}`;
+                const sectionId = `section${index + 1}`;
 
-                    return (
-                        <section className={classes.abtCard} key={sectionId} ref={createRef(sectionId)} id={sectionId}>
-                            <div className={classes.abtTitle}>
-                                <img className={classes.ttlImg} src={logoImg} alt="Chirogate in About."/>
-                                <h3>{cnt.title}</h3>
-                            </div>
-                            <div className={classes.abtCnt}>
-                                {cardCnt}
-                            </div>
-                        </section>
-                    )
+                return (
+                    <section className={classes.abtCard} key={sectionId} ref={createRef(sectionId)} id={sectionId}>
+                        <div className={classes.abtTitle}>
+                            <img className={classes.ttlImg} src={logoImg} alt="Chirogate in About."/>
+                            <h3>{cnt.title}</h3>
+                        </div>
+                        <div className={classes.abtCnt}>
+                            {cardCnt}
+                        </div>
+                    </section>
+                )
 
-                })}
-            </div>
-        </div>)
+            })}
+        </PageTemplate>
+
+    )
 };
 
 export default AboutPage;

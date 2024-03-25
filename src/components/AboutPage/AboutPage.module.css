@@ -1,26 +1,4 @@
-.abt {
-    width: 100%;
-    /*height: 800px;*/
-    background-color: var(--grey-prim);
-    margin-top: 80px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.abt img {
-    width: 100%;
-}
-
-.abtContainer {
-    width: 75%;
-    margin-top: 2%;
-    display: flex;
-    flex-direction: column;
-    /*align-items: center;*/
-}
-
-.abtContainer .abtCard {
+.abtCard {
     margin: 2% 0;
 
 }
@@ -43,10 +21,9 @@
     margin: 4% 0;
     display: flex;
     justify-content: space-around;
-
 }
 
-.abtCnt img {
+.abtFac img {
     width: 25%;
 }
 
@@ -67,7 +44,12 @@
 
 
 @media only screen and (max-width: 768px) {
-    .abtContainer {
-        width: 95%;
+    .abtCnt .abtFac {
+        flex-direction: column;
+        align-items: center;
+        row-gap: 2vw;
+    }
+    .abtFac img {
+        width: 80%;
     }
 }

@@ -1,16 +1,14 @@
 import React from 'react';
 
-import classes from './ContactPage.module.css'
-import Banner from "../UI/Banner";
+import PageTemplate from "../UI/PageTemplate";
 
 const ContactPage = (props) => {
-    return (
-        <div className={classes.abt}>
-            <Banner>Contact</Banner>
-            <div className={classes.abtContainer}>
+    const TITLE = "Contact";
 
-            </div>
-        </div>
+    return (
+        <PageTemplate title={TITLE}>
+
+        </PageTemplate>
     )
 };
 
