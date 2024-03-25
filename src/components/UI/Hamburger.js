@@ -49,7 +49,7 @@ const Hamburger = (props) => {
                         Services</NavLink></li>
                     <li><NavLink className={classes.navlink} to='specialProstag' onClick={onHamburgerNavClick}>Special
                         Analogs</NavLink></li>
-                    <li><NavLink className={classes.navlink} to='specialProstag'
+                    <li><NavLink className={classes.navlink} to='contact'
                                  onClick={onHamburgerNavClick}>Contact</NavLink></li>
                 </ul>
             </div>

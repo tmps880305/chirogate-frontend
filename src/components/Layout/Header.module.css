@@ -10,7 +10,7 @@
 
 .header {
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     top: 0;
     left: 0;
     width: 100vw;
@@ -41,8 +41,14 @@
     display: none;
 }
 
-.logo {
+.logoContainer {
+    /*width: fit-content;*/
     height: 50%;
+    margin: 0 2%;
+}
+
+.logo {
+    height: 100%;
     display: flex;
     justify-content: center;
 }
@@ -118,7 +124,7 @@
     justify-content: space-around;
     align-items: center;
     list-style: none;
-    z-index: 1;
+    z-index: 2;
 }
 
 [data-scroll="scrolled"] .dropContent {

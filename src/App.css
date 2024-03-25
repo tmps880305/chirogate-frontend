@@ -22,7 +22,7 @@
     color: var(--blk-prim);
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, a {
     padding: 0;
     margin: 0;
 }
@@ -75,6 +75,49 @@ button {
     font-weight: 300;
 }
 
+
+/* CSS for Table */
+table {
+    border-spacing: 0; /* To remove space between table border and th/td border */
+    border: solid var(--blk-prim) 1px;
+    border-radius: 8px;
+}
+
+table td, th {
+    /* Set only left and top border to prevent from overlapping borders */
+    border-left: solid var(--blk-prim) 1px;
+    border-top: solid var(--blk-prim) 1px;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+table th {
+    background-color: var(--or-prim);
+    border-top: none;
+}
+
+table td {
+    text-align: center;
+}
+
+table th:first-child {
+    /* Round the top-left corner of left-first th to fit the background with border */
+    border-top-left-radius: 6px;
+    border-left: none;
+}
+
+table th:last-child {
+    /* Round the top-right corner of right-first th to fit the background with border */
+    border-top-right-radius: 6px;
+}
+
+table td:first-child {
+    /* Remove overlapping borders */
+    border-left: none;
+}
+
+/**/
+
 @media only screen and (min-width: 1600px) {
 
 }
@@ -99,7 +142,6 @@ button {
     /*a {*/
     /*    font-size: calc(var(--a-size) * 0.8);*/
     /*}*/
-
     Button {
         font-size: calc(var(--btn-size) * 0.8);
     }
