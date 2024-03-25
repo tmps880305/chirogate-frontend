@@ -1,15 +1,15 @@
 import React from 'react';
 import classes from "./Banner.module.css";
-import abtBanner from "../../assets/banner.png";
+import banner from "../../assets/banner.png";
 
 
 const Banner = (props) => {
     return (
-        <div className={classes.abtBannerWrap}>
-            <div className={classes.abtBannerTtl}>
+        <div className={classes.bannerWrap}>
+            <div className={classes.bannerTtl}>
                 <h2>{props.children}</h2>
             </div>
-            <img src={abtBanner} alt="Chirogate office view"/>
+            <img src={banner} alt="Chirogate office view"/>
         </div>
     )
 
