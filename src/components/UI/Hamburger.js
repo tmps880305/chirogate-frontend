@@ -6,6 +6,7 @@ import {NavLink} from "react-router-dom";
 const Hamburger = (props) => {
     const [isBurgerOpen, setIsBurgerOpen] = useState(false);
     const [scrollY, setScrollY] = useState(0);
+    const navLinks = props.navLinks;
 
     useEffect(() => {
         const handleScroll = () => {
@@ -40,17 +41,15 @@ const Hamburger = (props) => {
 
             <div className={classes.menu}>
                 <ul className={classes['menu-ul']}>
-                    <li><NavLink className={classes.navlink} to='' onClick={onHamburgerNavClick}>Home</NavLink></li>
-                    <li><NavLink className={classes.navlink} to='about' onClick={onHamburgerNavClick}>About</NavLink>
-                    </li>
-                    <li><NavLink className={classes.navlink} to='prostagAPI' onClick={onHamburgerNavClick}>Prost
-                        API</NavLink></li>
-                    <li><NavLink className={classes.navlink} to='prostagCDMO' onClick={onHamburgerNavClick}>CDMO
-                        Services</NavLink></li>
-                    <li><NavLink className={classes.navlink} to='specialProstag' onClick={onHamburgerNavClick}>Special
-                        Analogs</NavLink></li>
-                    <li><NavLink className={classes.navlink} to='contact'
-                                 onClick={onHamburgerNavClick}>Contact</NavLink></li>
+                    {navLinks.map((nav, index) => (
+                        <li key={index}>
+                            <NavLink className={classes.navlink}
+                                     to={nav.label.dest}
+                                     onClick={onHamburgerNavClick}
+                                     state={nav.label.state}
+                            >{nav.label.alt}
+                            </NavLink></li>
+                    ))}
                 </ul>
             </div>
         </nav>

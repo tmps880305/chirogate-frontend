@@ -9,7 +9,7 @@ const FootNavigation = (props) => {
     return (
         <div className={classes.footNaviCard}>
             <NavLink className={classes.footNavMain} to={items.label.dest}
-                     state={items.state}>{items.label.main}</NavLink>
+                     state={items.label.state}>{items.label.main}</NavLink>
             <ul>
                 {items.subLabel.map((sub, index) => (
                     <li key={index}>

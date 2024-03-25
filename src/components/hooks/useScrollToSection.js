@@ -1,7 +1,12 @@
 import {useLocation, useNavigate} from "react-router-dom";
 import {useCallback, useEffect, useState} from "react";
 
-const useScrollToSection = () => {
+const useScrollToSection = (options={}) => {
+    const {
+        defaultBehavior = 'smooth',
+        defaultBlock = 'center',
+    } = options;
+
     const location = useLocation();
     const navigate = useNavigate();
     const [sectionRefs, setSectionRefs] = useState({});
@@ -24,7 +29,7 @@ const useScrollToSection = () => {
         const scrollToSection = (sectionId) => {
             const ref = sectionRefs[sectionId];
             if (ref) {
-                ref.scrollIntoView({behavior: 'smooth', block: 'center',});
+                ref.scrollIntoView({behavior: defaultBehavior, block: defaultBlock,});
             }
         };
 
@@ -35,7 +40,7 @@ const useScrollToSection = () => {
             // clear location state
             navigate(location.pathname, {replace: true, state: {}});
         }
-    }, [location, navigate, sectionRefs, readySections]);
+    }, [location, navigate, sectionRefs, readySections, defaultBehavior, defaultBlock]);
 
     return {createRef};
 }
