@@ -255,7 +255,7 @@ const ProstagCDMOPage = (props) => {
                     {DUMMY_CNT.map((cnt, index) => {
 
                         const sectionId = `section${index + 1}`;
-                        let contentToShow = '';
+                        let contentToShow;
 
                         if (index === 0 || index === 1) {
                             contentToShow =

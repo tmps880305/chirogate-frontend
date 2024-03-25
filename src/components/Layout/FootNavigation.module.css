@@ -9,3 +9,23 @@
     list-style: none;
     margin: 10px;
 }
+
+.footNavMain {
+    text-decoration: none;
+    font-size: var(--h4-size);
+    color: var(--wh-prim);
+}
+
+.footNavSub {
+    text-decoration: none;
+    font-size: var(--a-size);
+    color: var(--wh-prim);
+}
+
+.footNavMain:hover {
+    color: var(--or-prim);
+}
+
+.footNavSub:hover {
+    color: var(--or-prim);
+}

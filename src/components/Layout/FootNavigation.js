@@ -1,17 +1,21 @@
 import React from 'react';
 
 import classes from './FootNavigation.module.css'
+import {NavLink} from "react-router-dom";
 
 const FootNavigation = (props) => {
-    const items = props.contents;
-
+    const items = props.nav;
 
     return (
         <div className={classes.footNaviCard}>
-            <h3>{props.title}</h3>
+            <NavLink className={classes.footNavMain} to={items.label.dest}
+                     state={items.state}>{items.label.main}</NavLink>
             <ul>
-                {items.map((cnt, index) => (
-                    <li key={index}><h4>{cnt}</h4></li>
+                {items.subLabel.map((sub, index) => (
+                    <li key={index}>
+                        <NavLink className={classes.footNavSub} to={items.label.dest}
+                                 state={sub.state}>{sub.main}</NavLink>
+                    </li>
                 ))}
             </ul>
         </div>
