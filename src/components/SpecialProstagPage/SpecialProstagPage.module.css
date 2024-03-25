@@ -47,47 +47,9 @@
     border: 2px solid var(--blk-prim);
 }
 
-.abtBannerWrap {
-    width: 100%;
-    aspect-ratio: 5/1;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
-.abtBannerWrap img {
-    width: 100%;
-    position: absolute;
-    top: 0;
-    right: 0;
-}
-
-.abtBannerWrap .abtBannerTtl {
-    width: 50%;
-    height: 70%;
-    background-color: var(--grey-prim);
-    border-radius: 8px;
-    opacity: .7;
-    z-index: 1;
-}
-
-.abtBannerTtl {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.abtBannerTtl h2 {
-    text-align: center;
-}
 @media only screen and (max-width: 768px) {
     .abtContainer {
         width: 95%;
-    }
-
-    .abtBannerWrap .abtBannerTtl {
-        width: 100%;
-        height: 100%;
-        border-radius: initial;
     }
 }

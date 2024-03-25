@@ -2,8 +2,8 @@ import React from 'react';
 import useScrollToSection from "../hooks/useScrollToSection";
 
 import classes from './ProstagAPIPage.module.css'
-import abtBanner from "../../assets/banner.png";
 import logoImg from "../../assets/logo_img.png";
+import Banner from "../UI/Banner";
 
 const ProstagAPIPage = (props) => {
     const DUMMY_CNT = [
@@ -316,21 +316,11 @@ const ProstagAPIPage = (props) => {
         }
 
     ];
-
     const {createRef} = useScrollToSection();
-
-
-    const banner =
-        <div className={classes.abtBannerWrap}>
-            <div className={classes.abtBannerTtl}>
-                <h2>Prostaglandins API’s</h2>
-            </div>
-            <img src={abtBanner} alt="Chirogate office view"/>
-        </div>;
 
     return (
         <div className={classes.abt}>
-            {banner}
+            <Banner>Prostaglandins API’s</Banner>
             <div className={classes.abtContainer}>
                 {DUMMY_CNT.map((cnt, index) => {
 

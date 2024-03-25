@@ -5,8 +5,8 @@ import classes from './AboutPage.module.css'
 import SubIntroImg1 from "../../assets/subintro_1.png";
 import SubIntroImg2 from "../../assets/subintro_2.png";
 import SubIntroImg3 from "../../assets/subintro_3.png";
-import abtBanner from "../../assets/banner.png";
 import logoImg from '../../assets/logo_img.png';
+import Banner from "../UI/Banner";
 
 const AboutPage = (props) => {
     const DUMMY_CNT = [
@@ -39,21 +39,11 @@ const AboutPage = (props) => {
         }
 
     ]
-
     const {createRef} = useScrollToSection();
-
-    const banner =
-        <div className={classes.abtBannerWrap}>
-            <div className={classes.abtBannerTtl}>
-                <h2>About us</h2>
-            </div>
-            <img src={abtBanner} alt="Chirogate office view"/>
-        </div>;
-
 
     return (
         <div className={classes.abt}>
-            {banner}
+            <Banner>About us</Banner>
             <div className={classes.abtContainer}>
                 {DUMMY_CNT.map((cnt, index) => {
                     let cardCnt = "";

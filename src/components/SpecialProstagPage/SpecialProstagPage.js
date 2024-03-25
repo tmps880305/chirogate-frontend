@@ -2,7 +2,6 @@ import React from 'react';
 import useScrollToSection from "../hooks/useScrollToSection";
 
 import classes from './SpecialProstagPage.module.css'
-import abtBanner from "../../assets/banner.png";
 import logoImg from "../../assets/logo_img.png";
 import d1Img from "../../assets/special/d1.png";
 import d2Img from "../../assets/special/d2.png";
@@ -10,6 +9,7 @@ import d3Img from "../../assets/special/d3.png";
 import d4Img from "../../assets/special/d4.png";
 import d5Img from "../../assets/special/d5.png";
 import d6Img from "../../assets/special/d6.png";
+import Banner from "../UI/Banner";
 
 const SpecialProstagPage = (props) => {
     const DUMMY_CNT = [
@@ -45,20 +45,11 @@ const SpecialProstagPage = (props) => {
         },
 
     ];
-
     const {createRef} = useScrollToSection();
-
-    const banner =
-        <div className={classes.abtBannerWrap}>
-            <div className={classes.abtBannerTtl}>
-                <h2>Special Intermediates Prostaglandins analogs</h2>
-            </div>
-            <img src={abtBanner} alt="Chirogate office view"/>
-        </div>;
 
     return (
         <div className={classes.abt}>
-            {banner}
+            <Banner>Special Intermediates Prostaglandins analogs</Banner>
             <div className={classes.abtContainer}>
                 {DUMMY_CNT.map((cnt, index) => {
 
